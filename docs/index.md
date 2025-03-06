@@ -4,7 +4,7 @@ pageType: home
 hero:
   name: graphify-chart
   text: 
-  tagline: 一个为React定制的高性能图形及图表组件库
+  tagline: 一个为React定制的高性能图形及轻量图表组件库
   actions:
     - theme: brand
       text: 快速开始
