@@ -11,22 +11,22 @@ hero:
       link: /guide/
     - theme: alt
       text: GitHub
-      link: https://github.com/web-infra-dev/rspress
+      link: https://github.com/wangkunyu1998/grapyify-chart
   image:
     src: /rspress-icon.png
     alt: Logo
 features:
-  - title: Blazing fast build speed
-    details: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
+  - title: 极简体积，无负担集成
+    details: 包体积 < 30KB (Gzip)： 对标主流图表库（如 ECharts 的 300KB+），体积减少 90%，首屏加载速度提升 3 倍
     icon: 🏃🏻‍♀️
-  - title: Support for MDX content writing
-    details: MDX is a powerful way to write content, allowing you to use React components in Markdown.
+  - title: 零三方依赖
+    details: 不依赖 React/Vue 等框架，  原生 JavaScript/CSS 实现，兼容任意技术栈
     icon: 📦
-  - title: Built-in full-text search
-    details: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
+  - title: 开箱即用，5 分钟快速上手
+    details: 声明式 API 设计： 基础图表 5 行代码 生成，无需复杂配置
     icon: 🎨
-  - title: Simpler I18n solution
-    details: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
+  - title:  全场景适配，跨端无忧
+    details: 图表可导出为 SVG/PNG/jpg；提供 React/Vue/Angular 封装层，兼容主流前端框架
     icon: 🌍
   - title: Static site generation
     details: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.

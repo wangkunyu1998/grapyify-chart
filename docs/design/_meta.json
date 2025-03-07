@@ -1,0 +1,20 @@
+[
+  {
+    "type": "section-header",
+    "label": "设计思想"
+  },
+  {
+    "type": "file",
+    "name": "index",
+    "label": "stage",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "file",
+    "name": "index2",
+    "label": "stage",
+    "collapsible": true,
+    "collapsed": false
+  }
+]

@@ -1,11 +1,16 @@
 [
   {
-    "text": "Guide",
+    "text": "设计思想",
+    "link": "/design/",
+    "activeMatch": "/design/"
+  },
+  {
+    "text": "指南",
     "link": "/guide/",
     "activeMatch": "/guide/"
   },
   {
-    "text": "Hello world",
+    "text": "组件",
     "link": "/hello/",
     "activeMatch": "/hello/"
   },
