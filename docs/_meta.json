@@ -1,7 +1,7 @@
 [
   {
     "text": "设计思想",
-    "link": "/design/",
+    "link": "/design/stage",
     "activeMatch": "/design/"
   },
   {
@@ -11,8 +11,8 @@
   },
   {
     "text": "组件",
-    "link": "/hello/",
-    "activeMatch": "/hello/"
+    "link": "/components/Rect",
+    "activeMatch": "/components/"
   },
   {
     "text": "API",

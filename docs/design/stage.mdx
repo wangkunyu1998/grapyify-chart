@@ -1,0 +1,42 @@
+
+# Stage舞台
+
+在<font color="rgb(213, 97, 97)">`graphify-chart`</font>中Stage是所有图形、图表、图组的顶层节点（所有图形、图表、图组都同意称为节点）容器，用于表示节点可绘制区域。所有的节点都必须绘制在Stage下，示例如下：
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage);
+    stage.appendChild(rect)
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:200}} ></div>)
+}
+export default App;
+```
+## 添加多个节点
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0});
+    const rect2 = new Rect(stage,{x:120,y:0,fillStyle:'green'});
+    const rect3 = new Rect(stage,{x:240,y:0,fillStyle:'pink'});
+    stage.appendChild(rect,rect2,rect3)
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:200}} ></div>)
+}
+export default App;
+```
+## 属性支持
+
+| 属性 | 说明  | 类型 | 默认值 |
+| :-- | :---: | :--- | :---: |
+| contoiner | rongqi | Element |  |
+| width | 宽度 | ?number | 默认容器宽度 |
+| height | 高度 | ?number | 默认容器高度 |

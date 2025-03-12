@@ -1,0 +1,32 @@
+
+
+# Circle圆形
+
+## 示例
+```tsx preview
+import {useEffect,useRef} from 'react';
+import {Stage,Circle} from 'graphify-chart';
+function App() {
+   const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const circle = new Circle(stage,{x:100,y:100});
+    stage.appendChild(circle)
+  },[])
+  return <div ref={chartRef} style={{height:200}} ></div>
+}
+export default App;
+```
+## 属性支持
+
+| 属性 | 说明  | 类型 | 默认值 |
+| :-- | :---: | :--- | :---: |
+| x | 圆心x坐标 | ?number | 0 |
+| y | 圆心y坐标 | ?number | 0 |
+| radius | 半径 | ?number | 50 |
+| fillStyle | 填充色 | ?string | "blue" | 
+| borderColor | 边框颜色 | ?string | "rgba(0,0,0,0)" |
+| borderWidth | 边框宽度 | ?number | 0 |
+| zIndex | 层级 | ?number | 0 |
+
+

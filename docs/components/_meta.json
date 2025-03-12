@@ -1,33 +1,33 @@
 [
   {
     "type": "section-header",
-    "label": "设计思想"
+    "label": "基础组件"
   },
   {
     "type": "file",
-    "name": "stage",
-    "label": "Stage舞台",
-    "collapsible": true,
-    "collapsed": false
-  },
-    {
-    "type": "file",
-    "name": "node",
-    "label": "节点",
+    "name": "Rect",
+    "label": "Rect矩形",
     "collapsible": true,
     "collapsed": false
   },
   {
     "type": "file",
-    "name": "zIndex",
-    "label": "zIndex层级",
+    "name": "Circle",
+    "label": "Circle圆形",
     "collapsible": true,
     "collapsed": false
   },
   {
     "type": "file",
-    "name": "group",
-    "label": "Group分组",
+    "name": "Sector",
+    "label": "Sector扇形",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "file",
+    "name": "Line",
+    "label": "Line线条",
     "collapsible": true,
     "collapsed": false
   }

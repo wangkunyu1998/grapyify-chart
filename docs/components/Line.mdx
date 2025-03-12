@@ -1,0 +1,32 @@
+
+
+# Line线条
+
+## 示例
+```tsx preview
+import {useEffect,useRef} from 'react';
+import {Stage,Line} from 'graphify-chart';
+function App() {
+   const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const line = new Line(stage,{x1:0,y1:0,x2:100,y2:200,borderColor:'blue'});
+    stage.appendChild(line)
+  },[])
+  return <div ref={chartRef} style={{height:200}} ></div>
+}
+export default App;
+```
+## 属性支持
+
+| 属性 | 说明  | 类型 | 默认值 |
+| :-- | :---: | :--- | :---: |
+| x1 | 起始点x坐标 | ?number | 0 |
+| y1 | 起始点y坐标 | ?number | 0 |
+| x2 | 终点x坐标 | ?number | 0 |
+| y2 | 终点y坐标 | ?number | 0 |
+| borderColor | 线条颜色 | ?string | "blue" |
+| lineWidth | 边框宽度 | ?number | 1 |
+| zIndex | 层级 | ?number | 0 |
+
+

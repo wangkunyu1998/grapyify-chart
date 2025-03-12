@@ -1,0 +1,21 @@
+
+# zIndex层级
+
+在`graphify-chart`中我们通过`zIndex`来管理节点之间的层级，每个节点都支持基础属性`zIndex`。同时我们可以通过修改节点的`zIndex`属性来修改层级，示例如下：
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0,zIndex:2});
+    const rect2 = new Rect(stage,{x:50,y:50,fillStyle:'green',zIndex:1});
+    const rect3 = new Rect(stage,{x:100,y:100,fillStyle:'pink'});
+    rect2.addEventListener('click',() => rect2.setAttr({zIndex:rect2.zIndex === 1 ? 3 : 1}) )
+    stage.appendChild(rect,rect2,rect3)
+  },[])
+  return ( <div id="rect" ref={chartRef} style={{height:200}} ></div>)
+}
+export default App;
+```
