@@ -4,7 +4,6 @@
 在`graphify-chart`的定义中，`Stage`中的节点都是扁平化的，所有的节点都是兄弟节点。但有些时候我们需要对某些元素进行统一处理，所以我们引入了`Group`分组的概念。
 
 `Group`可以把所有的子节点当作一个整体操作。例如下面的例子，我们把绿色和粉色的矩形放进`Group`里，当我们对分组进行拖拽时，分组里的子节点也会跟着一起移动。
-
 示例如下：
 ```tsx preview
 import {useEffect,useState,useRef} from 'react';
@@ -13,7 +12,7 @@ function App() {
   const chartRef = useRef(null);
   useEffect(() => {
     const stage = new Stage(chartRef.current);
-    const rect = new Rect(stage,{x:0,y:0,draggable:true});
+    const rect = new Rect(stage,{x:0,y:0});
     const rect2 = new Rect(stage,{x:50,y:50,fillStyle:'green'});
     const rect3 = new Rect(stage,{x:100,y:100,fillStyle:'pink'});
     const group = new Group(stage,{draggable:true})

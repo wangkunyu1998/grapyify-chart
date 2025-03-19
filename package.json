@@ -13,6 +13,6 @@
   "devDependencies": {
     "@rspress/plugin-preview": "^1.43.1",
     "@types/node": "^18.11.17",
-    "graphify-chart": "^1.0.25"
+    "graphify-chart": "^1.0.35"
   }
 }
