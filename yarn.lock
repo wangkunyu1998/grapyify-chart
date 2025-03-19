@@ -1400,10 +1400,10 @@ graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
 
-graphify-chart@^1.0.35:
-  version "1.0.35"
-  resolved "https://registry.npmjs.org/graphify-chart/-/graphify-chart-1.0.35.tgz#bf4f3881869aeab490e6ce6966614141ccd96f2c"
-  integrity sha512-gd9n70jhwZYHybfaak93UHbFmYiut2olbwH48HJGnyxT1lrY3vi6x6RcXKVowvx/++MafcxG/ls6HrQLpXaA4Q==
+graphify-chart@^1.0.41:
+  version "1.0.41"
+  resolved "https://registry.npmjs.org/graphify-chart/-/graphify-chart-1.0.41.tgz#4ddb978b51ffdfb7461aec22761c9b24b83d9005"
+  integrity sha512-UHFj/hNxXkhJv8M4jMJNtgxxQGWA9wOJgwMn4U/wNe/B4XulKfHRSm7Z0Svb96FU/eGc2gg25hPMeEQr0uzVJQ==
   dependencies:
     terser "^5.39.0"
 

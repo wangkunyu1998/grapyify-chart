@@ -1,0 +1,38 @@
+
+
+# Rect矩形
+
+## 示例
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,LineChart} from 'graphify-chart';
+const options = {
+    margin: 60,
+    data:  [
+      { label: '食品', value: 4200 },
+      { label: '住房', value: 3100 },
+      { label: '交通', value: 2400 },
+      { label: '娱乐', value: 1500 },
+      { label: '其他', value: 800 }
+    ]
+}
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    new LineChart(stage,options);
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:500,width:'100%'}} ></div>)
+}
+export default App;
+```
+## 属性支持
+
+| 属性 | 说明  | 类型 | 默认值 |
+| :-- | :---: | :--- | :---: |
+| margin | 图表与容器的边距 | ?number | 30 |
+| lineColor | 线条颜色 | ?string | blue |
+| pointRadius| 线条连接点半径 | ?number | 0 |
+| data | 数据 | \{ label:string｜number, value: number }[] | 无 |
+
+

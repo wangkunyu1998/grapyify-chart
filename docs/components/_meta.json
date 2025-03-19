@@ -30,5 +30,37 @@
     "label": "Line线条",
     "collapsible": true,
     "collapsed": false
+  },
+  {
+    "type": "section-header",
+    "label": "图表"
+  },
+  {
+    "type": "file",
+    "name": "LineChart",
+    "label": "折线图",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "file",
+    "name": "Bar",
+    "label": "柱状图",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "file",
+    "name": "Pie",
+    "label": "饼图",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "file",
+    "name": "Ring",
+    "label": "圆环图",
+    "collapsible": true,
+    "collapsed": false
   }
 ]
