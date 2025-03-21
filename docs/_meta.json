@@ -1,5 +1,10 @@
 [
   {
+    "text": "首页",
+    "link": "/",
+    "activeMatch": "/index"
+  },
+  {
     "text": "设计思想",
     "link": "/design/stage",
     "activeMatch": "/design/"
@@ -8,10 +13,10 @@
     "text": "组件",
     "link": "/components/Rect",
     "activeMatch": "/components/"
+  },
+  {
+    "text": "性能",
+    "link": "/perfomance/nodes",
+    "activeMatch": "/perfomance/"
   }
-  // {
-  //   "text": "性能",
-  //   "link": "/perfomance/bubble",
-  //   "activeMatch": "/perfomance/"
-  // }
 ]

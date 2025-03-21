@@ -1,13 +1,6 @@
 [
   {
     "type": "file",
-    "name": "bubble",
-    "label": "气泡",
-    "collapsible": true,
-    "collapsed": false
-  },
-  {
-    "type": "file",
     "name": "nodes",
     "label": "5000个元素",
     "collapsible": true,

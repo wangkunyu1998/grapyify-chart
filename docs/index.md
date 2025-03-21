@@ -28,10 +28,7 @@ features:
   - title:  全场景适配，跨端无忧
     details: 图表可导出为 SVG/PNG/jpg；提供 React/Vue/Angular 封装层，兼容主流前端框架
     icon: 🌍
-  - title: Static site generation
-    details: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
+  - title: 高性能渲染
+    details: 底层基于 canvas 渲染实现，在项目中有良好的性能表现，5000+ 个元素同时执行动画有流畅的表现
     icon: 🌈
-  - title: Providing multiple custom capabilities
-    details: Through its extension mechanism, you can easily extend theme UI and build process.
-    icon: 🔥
 ---
