@@ -1,0 +1,19 @@
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,Group} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0});
+    const rect2 = new Rect(stage,{x:50,y:50,fillStyle:'green'});
+    const rect3 = new Rect(stage,{x:100,y:100,fillStyle:'pink'});
+    const group = new Group(stage,{draggable:true})
+    group.appendChild(rect2,rect3)
+    stage.appendChild(rect,group)
+  },[])
+  
+  return ( <div ref={chartRef} style={{height:500}} ></div>)
+}
+export default App;
+```

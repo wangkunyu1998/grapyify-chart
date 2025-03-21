@@ -5,17 +5,13 @@
     "activeMatch": "/design/"
   },
   {
-    "text": "指南",
-    "link": "/guide/",
-    "activeMatch": "/guide/"
-  },
-  {
     "text": "组件",
     "link": "/components/Rect",
     "activeMatch": "/components/"
-  },
-  {
-    "text": "API",
-    "link": "https://rspress.dev/api/index.html"
   }
+  // {
+  //   "text": "性能",
+  //   "link": "/perfomance/bubble",
+  //   "activeMatch": "/perfomance/"
+  // }
 ]
