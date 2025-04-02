@@ -48,15 +48,19 @@ function App() {
   useEffect(() => {
     const stage = new Stage(chartRef.current);
     const rects = rectList().map(v => new Rect(stage,v) )
-    const group = new Group(stage)
-    group.appendChild(...rects);
-    stage.appendChild(group);
+    rects.forEach(element => {
+      stage.appendChild(element);
+    });
+    
     const timer = mySetInterval(() => {
-      animation(group,500,{attr:'width',value:20})
+      rects.forEach(element => {
+        animation(element,500,[{attr:'width',value:20}])
+    });
     }, 1000);
     return () => {
       timer?.clear?.()
     }
+
   },[])
   
   return ( <div ref={chartRef} style={{height:5000}} ></div>)
