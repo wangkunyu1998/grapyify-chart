@@ -7,8 +7,8 @@ const emptyArr = new Array(5000).fill(null);
 const getRandomAttr = (canvas) => {
   return {
     radius : Math.random() * 10 + 2, // 半径2-10
-    x : Math.random() * canvas.width,
-    y : Math.random() * canvas.height,
+    x : Math.random() * canvas?.width,
+    y : Math.random() * canvas?.height,
     fillStyle : `hsl(${Math.random() * 360}, 70%, 50%)`,
   }
 } 
@@ -38,7 +38,7 @@ function App() {
    
     const timer = mySetInterval(() => {
       circles.forEach((node) => {
-      animation(node,1000,[{attr:'x',value: Math.random() * stage.canvas.width},{attr:'y',value: Math.random() * stage.canvas.width}]) ;
+      animation(node,1000,[{attr:'x',value: Math.random() * stage.canvas?.width},{attr:'y',value: Math.random() * stage.canvas?.height}]) ;
     })
     }, 1500);
     return () => {
