@@ -1,6 +1,13 @@
 [
   {
     "type": "file",
+    "name": "circleRandom",
+    "label": "随机元素",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "file",
     "name": "nodes",
     "label": "5000个元素",
     "collapsible": true,

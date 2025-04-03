@@ -1,0 +1,51 @@
+# 随机元素动画
+5000个随机节点动画渲染流畅，性能优异。
+```tsx preview
+import {useEffect,useRef} from 'react';
+import {Stage,Circle,animation} from 'graphify-chart';
+const emptyArr = new Array(5000).fill(null);
+const getRandomAttr = (canvas) => {
+  return {
+    radius : Math.random() * 10 + 2, // 半径2-10
+    x : Math.random() * canvas.width,
+    y : Math.random() * canvas.height,
+    fillStyle : `hsl(${Math.random() * 360}, 70%, 50%)`,
+  }
+} 
+function mySetInterval(callback, delay) {
+  let timerId;
+
+  function repeat() {
+    callback();         
+    timerId = setTimeout(repeat, delay); 
+  }
+  timerId = setTimeout(repeat, delay);
+  return {
+    clear: () => {
+      clearTimeout(timerId); 
+    }
+  };
+}
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const circles = emptyArr.map(v  => {
+      const circle =  new Circle(stage,getRandomAttr(stage.canvas))
+      stage.appendChild(circle);
+      return circle
+    })
+   
+    const timer = mySetInterval(() => {
+      circles.forEach((node) => {
+      animation(node,1000,[{attr:'x',value: Math.random() * stage.canvas.width},{attr:'y',value: Math.random() * stage.canvas.width}]) ;
+    })
+    }, 1500);
+    return () => {
+      timer?.clear?.()
+    }
+  },[])
+  return <div ref={chartRef} style={{height:800}} ></div>
+}
+export default App;
+```
