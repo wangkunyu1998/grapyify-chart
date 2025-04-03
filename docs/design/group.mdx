@@ -12,9 +12,9 @@ function App() {
   const chartRef = useRef(null);
   useEffect(() => {
     const stage = new Stage(chartRef.current);
-    const rect = new Rect(stage,{x:0,y:0});
+    const rect = new Rect(stage,{x:0,y:0,opcity:0.1});
     const rect2 = new Rect(stage,{x:50,y:50,fillStyle:'green'});
-    const rect3 = new Rect(stage,{x:100,y:100,fillStyle:'pink'});
+    const rect3 = new Rect(stage,{x:100,y:100,fillStyle:'pink',opcity:0.5});
     const group = new Group(stage,{draggable:true})
     group.appendChild(rect2,rect3)
     stage.appendChild(rect,group)
