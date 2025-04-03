@@ -37,6 +37,15 @@ export default App;
 
 | 属性 | 说明  | 类型 | 默认值 |
 | :-- | :---: | :--- | :---: |
-| contoiner | rongqi | Element |  |
+| contoiner | 容器 | Element |  |
 | width | 宽度 | ?number | 默认容器宽度 |
 | height | 高度 | ?number | 默认容器高度 |
+| downloadOption | 下载图片属性 | DownliadOption |默认值见下方 |
+## DownliadOption
+
+| 属性 | 说明  | 类型 | 默认值 |
+| :-- | :---: | :--- | :---: |
+| show | 是否显示 | boolean | true |
+| imgType | 图片类型 | ?string | png（参考canvas.toDataURL支持的图片类型） |
+| title | 图片名称 | ?string | 图形 |
+| icon | 下载icon | ?string | dom字符串 |

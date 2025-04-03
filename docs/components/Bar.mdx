@@ -1,9 +1,33 @@
 
 
-# Rect矩形
+# 柱状图
 
-## 示例
-```tsx preview
+```tsx
+import {useEffect,useState,useRef} from 'react';
+import {Stage,BarChart} from 'graphify-chart';
+const options = 
+      {
+      barColor: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEEAD'],
+      margin: 60,
+      data: [
+    { label: '1月', value: 65 },
+    { label: '2月', value: 80 },
+    { label: '3月', value: 45 },
+    { label: '4月', value: 95 },
+    { label: '5月', value: 70 }
+  ],
+    }
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    new BarChart(stage,options);
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:500}} ></div>)
+}
+export default App;
+```
+```tsx pure
 import {useEffect,useState,useRef} from 'react';
 import {Stage,BarChart} from 'graphify-chart';
 const options = 
@@ -24,10 +48,11 @@ function App() {
     const stage = new Stage(chartRef.current);
     new BarChart(stage,options);
   },[])
-  return (<div id="rect" ref={chartRef} style={{height:500,width:'100%'}} ></div>)
+  return (<div id="rect" ref={chartRef} style={{height:500}} ></div>)
 }
 export default App;
 ```
+
 ## 属性支持
 
 | 属性 | 说明  | 类型 | 默认值 |
