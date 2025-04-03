@@ -1,9 +1,9 @@
 # 随机元素动画
-5000个随机节点动画渲染流畅，性能优异。
+2000个随机节点动画渲染流畅，性能优异。
 ```tsx preview
 import {useEffect,useRef} from 'react';
 import {Stage,Circle,animation} from 'graphify-chart';
-const emptyArr = new Array(5000).fill(null);
+const emptyArr = new Array(2000).fill(null);
 const getRandomAttr = (canvas) => {
   return {
     radius : Math.random() * 10 + 2, // 半径2-10
@@ -35,7 +35,6 @@ function App() {
       stage.appendChild(circle);
       return circle
     })
-   
     const timer = mySetInterval(() => {
       circles.forEach((node) => {
       animation(node,1000,[{attr:'x',value: Math.random() * stage.canvas?.width},{attr:'y',value: Math.random() * stage.canvas?.height}]) ;
