@@ -1,0 +1,36 @@
+# graphify-chart
+`graphify-chart`是基于原声canvas设计的图形组件库，适用于敏捷开发图形及图表组件。
+### 我们为什么要开发graphify-chart
+在我们日常开发中，碰到图形或图表需求时我们使用市面的图表组件库时遇到的痛点：
+- 定制化成本过高
+  配置是api对简单需求比较友好，面对高定制化需求需要大量维护成本，甚至无法实现
+- 包体积与加载速度瓶颈
+  大部分数据可视化工具体积通常在500kb+，即便使用`Tree Shaking`优化后仍超过300kb
+- 动态交互扩展性差
+  对动态交互（如画布元素自由拖拽、多图表联动、自定义动画）的支持有限，API 灵活性不足。
+- 渲染层控制权缺失
+  难以与其他图形库深度整合；无法彻底解决跨端渲染一致性
+### 特性
+- 自研轻量图形渲染引擎
+- 开箱即用，无需深度学习api
+- 包体积与维护可控性
+- 内置高性能动画api
+- 兼容性强，兼容现代浏览器及大部分前端框架
+### 版本
+ https://www.npmjs.com/package/graphify-chart
+### 安装
+#### 使用 npm 或 yarn 或 pnpm 安装
+我们推荐使用 `npm` 或 `yarn` 或 `pnpm` 的方式进行开发，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
+
+使用npm
+```nodejs
+npm install graphify-chart --save
+```
+使用yarn
+```nodejs
+yarn add graphify-chart
+```
+使用pnpm
+```nodejs
+pnpm install graphify-chart --save
+```

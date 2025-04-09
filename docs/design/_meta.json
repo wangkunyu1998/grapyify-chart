@@ -1,7 +1,14 @@
 [
   {
     "type": "section-header",
-    "label": "设计思想"
+    "label": "介绍"
+  },
+  {
+    "type": "file",
+    "name": "introduce",
+    "label": "graphify-chart",
+    "collapsible": true,
+    "collapsed": false
   },
   {
     "type": "file",
@@ -28,6 +35,13 @@
     "type": "file",
     "name": "group",
     "label": "Group分组",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "file",
+    "name": "animation",
+    "label": "动画",
     "collapsible": true,
     "collapsed": false
   }

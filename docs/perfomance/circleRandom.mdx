@@ -1,5 +1,7 @@
 # 随机元素动画
-2000个随机节点动画渲染流畅，性能优异。
+2000个随机节点动画渲染流畅。
+
+在动画方法封装中，我们使用批处理机制，不论有多少个节点在运行动画，我们都只有一个动画进程，这样使得性能方面的表现非常优异。
 ```tsx preview
 import {useEffect,useRef} from 'react';
 import {Stage,Circle,animation} from 'graphify-chart';

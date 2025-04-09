@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgraphify_chart=self.webpackChunkgraphify_chart||[]).push([["946"],{7516:function(r,a,c){c.r(a),c.d(a,{default:()=>f});var e=c(5893);function f(){return(0,e.jsx)("div",{children:"foo"})}c(7294)}}]);

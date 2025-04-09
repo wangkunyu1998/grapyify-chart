@@ -1,34 +1,5 @@
-
-
-# 折线图
-
-## 示例
-```tsx preview
-import {useEffect,useState,useRef} from 'react';
-import {Stage,LineChart} from 'graphify-chart';
-
-const options = {
-    margin: 60,
-    data:  [
-        { label: '食品', value: 230 },
-        { label: '住房', value: 932 },
-        { label: '交通', value: 301 },
-        { label: '娱乐', value: 434 },
-        { label: '其他', value: 1290 },
-    ]
-}
-function App() {
-  const chartRef = useRef(null);
-  useEffect(() => {
-    const stage = new Stage(chartRef.current);
-    new LineChart(stage,options);
-  },[])
-  return (<div id="rect" ref={chartRef} style={{height:500,width:'100%'}} ></div>)
-}
-export default App;
-```
-## 数据点
-我们可以通过设置`options`中的`pointRadius`来为数据添加标记点。示例如下：
+## 曲线图
+我们可以通过这只`options`中的`smooth`来设置为平滑的曲线。示例如下：
 ```tsx preview
 import {useEffect,useState,useRef} from 'react';
 import {Stage,LineChart} from 'graphify-chart';
@@ -36,13 +7,14 @@ import {Stage,LineChart} from 'graphify-chart';
 const options = {
     margin: 60,
     smooth:true,
-    pointRadius:5,
+    pointRadius:4,
     data:  [
         { label: '食品', value: 230 },
         { label: '住房', value: 932 },
         { label: '交通', value: 301 },
         { label: '娱乐', value: 434 },
         { label: '其他', value: 1290 },
+        { label: '其他2', value: 1290 },
     ]
 }
 function App() {
@@ -65,5 +37,3 @@ export default App;
 | labelStyle | 坐标轴字体样式 | ?\{fontSize:number,fontFamily:string,color:string} | \{fontSize:12,fontFamily:默认字体,color:\#333} |
 | axisStyle | 坐标轴样式 | ?\{color:string,lineWidth:number} | \{color:\#666,lineWidth:1 } |
 | data | 数据 | \{ label:string｜number, value: number }[] | 无 |
-
-

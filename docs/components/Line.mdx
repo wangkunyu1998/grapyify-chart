@@ -7,11 +7,28 @@
 import {useEffect,useRef} from 'react';
 import {Stage,Line} from 'graphify-chart';
 function App() {
-   const chartRef = useRef(null);
+  const chartRef = useRef(null);
   useEffect(() => {
     const stage = new Stage(chartRef.current);
-    const line = new Line(stage,{x1:0,y1:0,x2:100,y2:200,borderColor:'blue'});
+    const line = new Line(stage,{x1:0,y1:0,x2:100,y2:200});
     stage.appendChild(line)
+  },[])
+  return <div ref={chartRef} style={{height:200}} ></div>
+}
+export default App;
+```
+## 不同类型的曲线
+我们可以通过`lineType`配合不同的属性来绘制二次贝塞尔曲线和三次贝塞尔曲线。示例如下：
+```tsx preview
+import {useEffect,useRef} from 'react';
+import {Stage,Line} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const quadratic = new Line(stage,{x1:100,y1:10,x2:250,y2:10,lineType:'quadratic',control1:{x:200,y:150}});
+    const cubic = new Line(stage,{x1:50,y1:150,x2:350,y2:150,lineType:'cubic',control1:{x:160,y:50},control2:{x:250,y:200}});
+    stage.appendChild(quadratic,cubic)
   },[])
   return <div ref={chartRef} style={{height:200}} ></div>
 }
@@ -25,7 +42,10 @@ export default App;
 | y1 | 起始点y坐标 | ?number | 0 |
 | x2 | 终点x坐标 | ?number | 0 |
 | y2 | 终点y坐标 | ?number | 0 |
-| borderColor | 线条颜色 | ?string | "blue" |
+| lineType | 绘制线条的类型 | ? line \| quadratic \| cubic | line |
+| control1 | 绘制贝塞尔曲线的第一个拐点，lineType = quadratic时为必填项 | ?\{x:number,y:number} |  |
+| control2 | 绘制贝塞尔曲线的第二个拐点，lineType = cubic时为必填项 | ?\{x:number,y:number} |  |
+| fillStyle | 线条颜色 | ?string | blue |
 | lineWidth | 边框宽度 | ?number | 1 |
 | zIndex | 层级 | ?number | 0 |
 | opcity | 透明度 | ?number | 1 |

@@ -1,0 +1,99 @@
+# 动画
+日常图形开发中，动画也是必不可少的。在`graphify-chart`的中我们内置了动画方法，使用起来非常简单，我们只需要传入节点，动画时长，变化的属性即可。
+性能问题(详见[性能](/perfomance/circleRandom))。
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,animation} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0,zIndex:2});
+    stage.appendChild(rect);
+    animation(rect,2000,[{attr:'x',value:200}])
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:100}} ></div>)
+}
+export default App;
+```
+同时我们也支持多种动画曲线。
+ease‌
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,animation} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0,zIndex:2});
+    stage.appendChild(rect);
+    animation(rect,2000,[{attr:'x',value:200}],'ease')
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:100}} ></div>)
+}
+export default App;
+```
+ease-in
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,animation} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0,zIndex:2});
+    stage.appendChild(rect);
+    animation(rect,2000,[{attr:'x',value:200}],'ease-in')
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:100}} ></div>)
+}
+export default App;
+```
+ease-out
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,animation} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0,zIndex:2});
+    stage.appendChild(rect);
+    animation(rect,2000,[{attr:'x',value:200}],'ease-out')
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:100}} ></div>)
+}
+export default App;
+```
+ease-in-out
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,animation} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0,zIndex:2});
+    stage.appendChild(rect);
+    animation(rect,2000,[{attr:'x',value:200}],'ease-in-out')
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:100}} ></div>)
+}
+export default App;
+```
+bounce
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,animation} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:0,y:0,zIndex:2});
+    stage.appendChild(rect);
+    animation(rect,2000,[{attr:'x',value:200}],'bounce')
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:100}} ></div>)
+}
+export default App;
+```

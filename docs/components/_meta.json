@@ -44,6 +44,13 @@
   },
   {
     "type": "file",
+    "name": "Curve",
+    "label": "曲线图",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "file",
     "name": "Bar",
     "label": "柱状图",
     "collapsible": true,

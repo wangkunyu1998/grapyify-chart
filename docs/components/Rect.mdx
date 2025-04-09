@@ -13,11 +13,111 @@ function App() {
     const rect = new Rect(stage);
     stage.appendChild(rect)
   },[])
-  return (<div id="rect" ref={chartRef} style={{height:200}} ></div>)
+  return (<div  ref={chartRef} style={{height:200}} ></div>)
 }
 export default App;
 ```
-## 属性支持
+## 属性设置
+当我们想修改矩形的某一项属性时，可以通过节点内置的`setAttr`方法修改节点的属性，示例如下:
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  const rectRef = useRef(null)
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage);
+    rectRef.current = rect
+    stage.appendChild(rect)
+    return () => {
+      stage.unMount()
+    }
+  },[])
+  return (<div>
+    <div  ref={chartRef} style={{height:200}} ></div>
+    <input type="color" onChange={evt => rectRef.current.setAttr({fillStyle:evt.target.value})} />
+  </div>)
+}
+export default App;
+```
+## 坐标
+同样的我们可以通过设置`x`,`y`来修改节点的位置，这在日常开发动画的时候非常哟用。下面我们使用一段动画示例来展示一下：
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,animation} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  const rectRef = useRef(null)
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage);
+    rectRef.current = rect;
+    stage.appendChild(rect)
+  },[])
+  return (<div>
+    <button 
+    style={{padding:'0 8px',color:'#fff',background:'#1677ff',borderRadius:'2px',marginBottom:'24px'}} 
+    onClick={() =>{ animation(rectRef.current,1500,[{attr:'x',value:100},{attr:'y',value:100}])}}
+    >开始动画</button>
+    <div ref={chartRef} style={{height:300}} ></div>
+  </div>)
+}
+export default App;
+```
+## 尺寸
+可以通过设置`width`和 `height`来展示不同尺寸的图形
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{width:200,height:150});
+    stage.appendChild(rect)
+  },[])
+  return (<div ref={chartRef} style={{height:200}} ></div>)
+}
+export default App;
+```
+## 样式
+可以通过设置`borderColor`、`borderWidth`和`radius`来实现更丰富的样式实现。
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage,{x:10,y:10,fillStyle:'#fff',borderColor:'#13C2C2',radius:10,borderWidth:2});
+    stage.appendChild(rect)
+  },[])
+  return (<div ref={chartRef} style={{height:200}} ></div>)
+}
+export default App;
+```
+## 透明度
+可以通过设置`opcity`修改图形的透明度。
+我们可以做一个呼吸灯示例：
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Rect,animation} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const rect = new Rect(stage);
+    setInterval(() => {
+        animation(rect,2000,[{attr:'opcity',value:Math.random() + 0.5}])
+    }, 2000);
+    stage.appendChild(rect)
+  },[])
+  return (<div ref={chartRef} style={{height:200}} ></div>)
+}
+export default App;
+```
+## options
 
 | 属性 | 说明  | 类型 | 默认值 |
 | :-- | :---: | :--- | :---: |

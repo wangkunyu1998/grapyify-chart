@@ -17,6 +17,98 @@ function App() {
 }
 export default App;
 ```
+## 属性设置
+当我们想修改矩形的某一项属性时，可以通过节点内置的`setAttr`方法修改节点的属性，示例如下:
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Circle} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  const circleRef = useRef(null)
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const circle = new Circle(stage,{x:100,y:100});
+    circleRef.current = circle
+    stage.appendChild(circle)
+    return () => {
+      stage.unMount()
+    }
+  },[])
+  return (<div>
+    <div ref={chartRef} style={{height:200}} ></div>
+    <input type="color" onChange={evt => circleRef.current.setAttr({fillStyle:evt.target.value})} />
+  </div>)
+}
+export default App;
+```
+## 坐标
+同样的我们可以通过设置`x`,`y`来修改节点的位置，和矩形不同的是，xy坐标是圆心的位置。示例如下：
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,Circle} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  const rectRef = useRef(null)
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const circle = new Circle(stage,{x:50,y:50});
+    stage.appendChild(circle)
+  },[])
+  return (<div>
+    <div ref={chartRef} style={{height:200}} ></div>
+  </div>)
+}
+export default App;
+```
+## 尺寸
+可以通过设置`radius`来设置圆半径来展示不同尺寸的圆。示例如下：
+```tsx preview
+import {useEffect,useRef} from 'react';
+import {Stage,Circle} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const circle = new Circle(stage,{x:100,y:100,radius:20});
+    stage.appendChild(circle)
+  },[])
+  return <div ref={chartRef} style={{height:200}} ></div>
+}
+export default App;
+```
+## 样式
+可以通过设置`borderColor`、`borderWidth`和`radius`来实现更丰富的样式实现。示例如下：
+```tsx preview
+import {useEffect,useRef} from 'react';
+import {Stage,Circle} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const circle = new Circle(stage,{x:100,y:100,fillStyle:'yellow',borderColor:'#13C2C2',borderWidth:2});
+    stage.appendChild(circle)
+  },[])
+  return <div ref={chartRef} style={{height:200}} ></div>
+}
+export default App;
+```
+## 透明度
+可以通过设置`opcity`修改图形的透明度。下面我们来对比一下两个圆这只不同透明度的区别：
+```tsx preview
+import {useEffect,useRef} from 'react';
+import {Stage,Circle} from 'graphify-chart';
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    const circle = new Circle(stage,{x:100,y:100,opcity:1});
+    const circle2 = new Circle(stage,{x:150,y:100,opcity:0.5});
+    stage.appendChild(circle,circle2)
+  },[])
+  return <div ref={chartRef} style={{height:200}} ></div>
+}
+export default App;
+```
 ## 属性支持
 
 | 属性 | 说明  | 类型 | 默认值 |
