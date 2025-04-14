@@ -25,15 +25,13 @@ import {Stage,Rect} from 'graphify-chart';
 function App() {
   const chartRef = useRef(null);
   const rectRef = useRef(null)
+  const [fillStyle,setFillStyle] = useState('blue')
   useEffect(() => {
     const stage = new Stage(chartRef.current);
-    const rect = new Rect(stage);
+    const rect = new Rect(stage,{fillStyle});
     rectRef.current = rect
     stage.appendChild(rect)
-    return () => {
-      stage.unMount()
-    }
-  },[])
+  },[fillStyle])
   return (<div>
     <div  ref={chartRef} style={{height:200}} ></div>
     <input type="color" onChange={evt => rectRef.current.setAttr({fillStyle:evt.target.value})} />
@@ -100,7 +98,7 @@ export default App;
 ## 透明度
 可以通过设置`opcity`修改图形的透明度。
 我们可以做一个呼吸灯示例：
-```tsx preview
+{/* ```tsx preview
 import {useEffect,useState,useRef} from 'react';
 import {Stage,Rect,animation} from 'graphify-chart';
 function App() {
@@ -116,7 +114,7 @@ function App() {
   return (<div ref={chartRef} style={{height:200}} ></div>)
 }
 export default App;
-```
+``` */}
 ## options
 
 | 属性 | 说明  | 类型 | 默认值 |

@@ -55,6 +55,43 @@ function App() {
 }
 export default App;
 ```
+## dataZoom
+我们可以通过设置`options`中的`dataZoom`属性来为图表添加缩放组件。示例如下：
+```tsx preview
+import {useEffect,useState,useRef} from 'react';
+import {Stage,LineChart} from 'graphify-chart';
+
+const options = {
+    margin: 60,
+    smooth:true,
+    pointRadius:5,
+    dataZoom:{
+      show:true,
+      dataRange:5
+    },
+    data:  [
+        { label: '食品', value: 230 },
+        { label: '住房', value: 932 },
+        { label: '交通', value: 301 },
+        { label: '娱乐', value: 434 },
+        { label: '其他', value: 1290 },
+        { label: '食品1', value: 230 },
+        { label: '住房1', value: 932 },
+        { label: '交通1', value: 301 },
+        { label: '娱乐1', value: 434 },
+        { label: '其他1', value: 1290 },
+    ]
+}
+function App() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const stage = new Stage(chartRef.current);
+    new LineChart(stage,options);
+  },[])
+  return (<div id="rect" ref={chartRef} style={{height:500,width:'100%'}} ></div>)
+}
+export default App;
+```
 ## 属性支持
 
 | 属性 | 说明  | 类型 | 默认值 |
@@ -64,6 +101,7 @@ export default App;
 | pointRadius| 线条连接点半径 | ?number | 0 |
 | labelStyle | 坐标轴字体样式 | ?\{fontSize:number,fontFamily:string,color:string} | \{fontSize:12,fontFamily:默认字体,color:\#333} |
 | axisStyle | 坐标轴样式 | ?\{color:string,lineWidth:number} | \{color:\#666,lineWidth:1 } |
+| dataZoom | 数据区域缩放的组件 | \{ show:boolean, dataRange: number }| \{ show:false, dataRange: 5 |
 | data | 数据 | \{ label:string｜number, value: number }[] | 无 |
 
 

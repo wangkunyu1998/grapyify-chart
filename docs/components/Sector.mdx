@@ -30,9 +30,6 @@ function App() {
     const sector = new Sector(stage,{x:100,y:100});
     sectorRef.current = sector
     stage.appendChild(sector)
-    return () => {
-      stage.unMount()
-    }
   },[])
   return (<div>
     <div ref={chartRef} style={{height:200}} ></div>

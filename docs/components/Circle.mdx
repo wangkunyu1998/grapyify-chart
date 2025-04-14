@@ -30,9 +30,6 @@ function App() {
     const circle = new Circle(stage,{x:100,y:100});
     circleRef.current = circle
     stage.appendChild(circle)
-    return () => {
-      stage.unMount()
-    }
   },[])
   return (<div>
     <div ref={chartRef} style={{height:200}} ></div>
