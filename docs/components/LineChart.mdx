@@ -64,23 +64,21 @@ import {Stage,LineChart} from 'graphify-chart';
 const options = {
     margin: 60,
     smooth:true,
-    pointRadius:5,
+    pointRadius:2,
     dataZoom:{
       show:true,
-      dataRange:5
+      dataRange:20
     },
-    data:  [
-        { label: '食品', value: 230 },
-        { label: '住房', value: 932 },
-        { label: '交通', value: 301 },
-        { label: '娱乐', value: 434 },
-        { label: '其他', value: 1290 },
-        { label: '食品1', value: 230 },
-        { label: '住房1', value: 932 },
-        { label: '交通1', value: 301 },
-        { label: '娱乐1', value: 434 },
-        { label: '其他1', value: 1290 },
+    data: new Array(20).fill(null).map((v,i) => {
+      return  [
+        { label: `食品${i}`, value: 230 },
+        { label: `住房${i}`, value: 932 },
+        { label: `交通${i}`, value: 301 },
+        { label: `娱乐${i}`, value: 434 },
+        { label: `其他${i}`, value: 1290 },
+        
     ]
+    }). flat()
 }
 function App() {
   const chartRef = useRef(null);
